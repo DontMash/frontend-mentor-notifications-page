@@ -15,9 +15,8 @@
 </script>
 
 <article
-  class={`flex p-4 rounded-lg ${
-    read ? '' : 'bg-very-light-grayish-blue'
-  } transition-colors text-sm md:text-base text-left`}
+  class="flex p-4 rounded-lg transition-colors text-sm md:text-base text-left"
+  class:bg-very-light-grayish-blue={!read}
 >
   <h2 class="sr-only">Notification by {by}</h2>
   <div>
@@ -35,9 +34,9 @@
       <!-- Title -->
       {#if (payload.type === 'react' || payload.type === 'group') && payload.data}
         <a
-          class={`inline ml-[0.2em] ${
-            payload.type === 'react' ? 'text-grayish-blue' : 'text-blue'
-          } font-extrabold hover:text-blue transition-colors pointer-events-auto`}
+          class="inline ml-[0.2em] font-extrabold hover:text-blue transition-colors pointer-events-auto"
+          class:text-grayish-blue={payload.type === 'react'}
+          class:text-blue={payload.type !== 'react'}
           href="/"
         >
           {payload.data}

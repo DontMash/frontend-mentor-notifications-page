@@ -100,7 +100,8 @@
         {#each notifications as notification}
           <li>
             <div
-              class={`w-full ${notification.read ? 'pointer-events-none' : ''}`}
+              class="w-full"
+              class:pointer-events-none={notification.read}
               role="button"
               tabindex={notification.read ? null : 0}
               on:click={() => {
