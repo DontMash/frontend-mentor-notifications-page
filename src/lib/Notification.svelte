@@ -72,7 +72,7 @@
         href="/"
       >
         <img
-          src={`/src/assets/images/${payload.data}.webp`}
+          src={`/images/${payload.data}.webp`}
           alt={`Commented picture ${payload.data}`}
           width="40"
           height="40"
