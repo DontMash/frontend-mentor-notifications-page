@@ -23,4 +23,14 @@
     font-weight: 500 800;
     font-stretch: 25% 150%;
   }
+
+  :root {
+    @apply font-jakarta;
+  }
+}
+
+@layer components {
+  .desktop {
+    @apply md:bg-very-light-grayish-blue md:py-16;
+  }
 }

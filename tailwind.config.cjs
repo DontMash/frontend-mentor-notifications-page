@@ -21,8 +21,8 @@ module.exports = {
       'very-dark-blue': '#1c202b',
     },
     fontFamily: {
-      'jakarta': ['Plus Jakarta', 'sans'],
-      'jakarta-variable': ['Plus Jakarta Variable', 'sans'],
+      'jakarta': ['Plus Jakarta', 'sans-serif'],
+      'jakarta-variable': ['Plus Jakarta Variable', 'sans-serif'],
     },
   },
   plugins: [],
