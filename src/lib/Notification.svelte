@@ -19,6 +19,7 @@
     read ? '' : 'bg-very-light-grayish-blue'
   } transition-colors text-sm md:text-base text-left`}
 >
+  <h2 class="sr-only">Notification by {by}</h2>
   <div>
     <Avatar name={by} />
   </div>
