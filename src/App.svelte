@@ -88,9 +88,7 @@
   }
 </script>
 
-<div
-  class="md:max-w-[800px] px-4 md:px-8 mx-auto rounded-2xl bg-white md:shadow-2xl"
->
+<div class="md:max-w-[800px] px-4 md:px-8 mx-auto rounded-2xl bg-white md:shadow-2xl">
   <Header
     notificationsCount={unreadNotificationsCount}
     on:clear={markAllNotificationsRead}
@@ -101,10 +99,16 @@
       <ul class="space-y-4">
         {#each notifications as notification}
           <li>
-            <button
+            <div
               class={`w-full ${notification.read ? 'pointer-events-none' : ''}`}
-              type="button"
+              role="button"
+              tabindex={notification.read ? null : 0}
               on:click={() => {
+                notification.read = true;
+              }}
+              on:keydown={(event) => {
+                if (event.code !== 'Enter') return;
+
                 notification.read = true;
               }}
             >
@@ -115,7 +119,7 @@
                 payload={notification.payload}
                 at={notification.at}
               />
-            </button>
+            </div>
           </li>
         {/each}
       </ul>
